@@ -4,6 +4,7 @@ namespace CrowdVote.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using CrowdVote.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CrowdVote.Models.CrowdVoteDbContext>
     {
@@ -14,18 +15,22 @@ namespace CrowdVote.Migrations
 
         protected override void Seed(CrowdVote.Models.CrowdVoteDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Categories.AddOrUpdate(
+                i => i.ID,
+                new Category { Title = "AJAX"},
+                new Category { Title = "ASP.NET MVC"},
+                new Category { Title = "C++"},
+                new Category { Title = "Javascript"},
+                new Category { Title = "Laravel"},
+                new Category { Title = "Lua"},
+                new Category { Title = "Node.js"},
+                new Category { Title = "PHP"},
+                new Category { Title = "Python"},
+                new Category { Title = "Rails"},
+                new Category { Title = "Ruby"},
+                new Category { Title = "Small Basic"},
+                new Category { Title = "Xamarin Forms"}
+                );
         }
     }
 }
