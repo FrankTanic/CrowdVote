@@ -1,0 +1,17 @@
+﻿@model CrowdVote.Models.Link
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>What link did you found about</h2>
+<form method="post">
+    @Html.ValidationSummary()
+    @Html.LabelFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title)
+    @Html.LabelFor(m => m.Url)
+    @Html.TextBoxFor(m => m.Url)
+    <button type="submit">Post link</button>
+</form>
+
