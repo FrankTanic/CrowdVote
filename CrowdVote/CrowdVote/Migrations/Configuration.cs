@@ -15,21 +15,21 @@ namespace CrowdVote.Migrations
 
         protected override void Seed(CrowdVote.Models.CrowdVoteDbContext context)
         {
-            context.Subjects.AddOrUpdate(
+            context.Category.AddOrUpdate(
                 i => i.ID,
-                new Subject { Title = "AJAX"},
-                new Subject { Title = "ASP.NET MVC"},
-                new Subject { Title = "C++"},
-                new Subject { Title = "Javascript"},
-                new Subject { Title = "Laravel"},
-                new Subject { Title = "Lua"},
-                new Subject { Title = "Node.js"},
-                new Subject { Title = "PHP"},
-                new Subject { Title = "Python"},
-                new Subject { Title = "Rails"},
-                new Subject { Title = "Ruby"},
-                new Subject { Title = "Small Basic"},
-                new Subject { Title = "Xamarin Forms"}
+                new Category { Title = "AJAX"},
+                new Category { Title = "ASP.NET MVC"},
+                new Category { Title = "C++"},
+                new Category { Title = "Javascript"},
+                new Category { Title = "Laravel"},
+                new Category { Title = "Lua"},
+                new Category { Title = "Node.js"},
+                new Category { Title = "PHP"},
+                new Category { Title = "Python"},
+                new Category { Title = "Rails"},
+                new Category { Title = "Ruby"},
+                new Category { Title = "Small Basic"},
+                new Category { Title = "Xamarin Forms"}
                 );
         }
     }

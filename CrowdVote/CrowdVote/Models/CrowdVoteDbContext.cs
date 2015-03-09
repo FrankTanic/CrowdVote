@@ -13,8 +13,8 @@ namespace CrowdVote.Models
         {
         }
 
-        public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Topic> Topics { get; set; }
 
     }
 }

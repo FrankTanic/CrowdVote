@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CrowdVote.Models;
@@ -11,22 +12,35 @@ namespace CrowdVote.Controllers
     {
         private CrowdVoteDbContext _db = new CrowdVoteDbContext();
 
-        // GET: Home
+        public ActionResult Index()
+        {
+            var categories = _db.Category.ToList();
+
+            if(categories == null)
+            {
+                return View();
+            }
+
+            return View(categories);
+        }
+
         public ActionResult Details(int? id)
         {
             if(id == null)
             {
-                HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Subject subject = _db.Subjects.Find(id);
+            ViewBag.Category = id;
 
-            if(subject == null)
+            Category category = _db.Category.Find(id);
+
+            if(category == null)
             {
                 return HttpNotFound();
             }
 
-            return View(subject);
+            return View(category);
         }
     }
 }
