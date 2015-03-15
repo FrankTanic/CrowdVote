@@ -5,8 +5,12 @@
 }
 
 <div class="sub-menu">
-    <a href=@Url.Action("Create", "Topics", new { categoryId = ViewBag.Category })>Post a new link</a>
+    <a href=@Url.Action("Create", "Links", new { topicId = ViewBag.Topic })>Post a new link</a>
 </div>
 
+@foreach (var link in Model.Links)
+{
 
+    <li><a href="@link.Url">@link.Title</a></li>
+}
 

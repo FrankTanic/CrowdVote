@@ -62,7 +62,7 @@ namespace CrowdVote.Controllers
 
             Topic topic = _db.Topics.Find(id);
 
-            return View();           
+            return View(topic);           
         }
     }
 }

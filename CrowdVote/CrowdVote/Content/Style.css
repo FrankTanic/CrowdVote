@@ -29,6 +29,15 @@ li {
     display: inline-block;
     width: 33%;
     list-style-type: none;
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 input[type="text"] {

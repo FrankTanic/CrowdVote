@@ -7,7 +7,9 @@
 </head>
 <body>
     <header>
-        <h1>CrowdVote</h1>
+        <h1>CrowdVote @if (@ViewBag.Cat != null) { <a href="@Url.Action("Details", "Categories", new { id = @ViewBag.Category })" >>> @ViewBag.Cat</a>}</h1>
+    @Html.MvcSiteMap().Menu() 
+    @Html.MvcSiteMap().SiteMapPath()
     </header>
     <div class="container">
         @RenderBody()

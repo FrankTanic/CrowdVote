@@ -40,6 +40,8 @@ namespace CrowdVote.Controllers
                 return HttpNotFound();
             }
 
+            ViewBag.Cat = category.Title;
+
             return View(category);
         }
     }
