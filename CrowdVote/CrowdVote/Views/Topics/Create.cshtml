@@ -1,0 +1,15 @@
+﻿@model CrowdVote.Models.Topic
+
+@{
+    ViewBag.Title = "Create topic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>What part of @ViewBag.Category would you like to know more about?</h2>
+<form method="post">
+    @Html.ValidationMessageFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title)
+    <button type="submit">Request a link</button>
+</form>
+

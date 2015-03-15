@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="sub-menu">
+    <a href=@Url.Action("Create", "Topics", new { categoryId = ViewBag.Category })>Request a link</a>
+</div>
+
+@foreach (var topic in Model.Topics)
+{
+    
+    <li><a href=@Url.Action("Details", "Topics", new { id = @topic.ID })>@topic.Title</a></li>
+}
+
+
