@@ -15,6 +15,6 @@ namespace CrowdVote.Models
 
         public DbSet<Category> Category { get; set; }
         public DbSet<Topic> Topics { get; set; }
-
+        public DbSet<Link> Links { get; set; }
     }
 }
