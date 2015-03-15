@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CrowdVote.Models;
 using System.Net;
+using System.Data.Entity;
 
 namespace CrowdVote.Controllers
 {
@@ -49,5 +50,32 @@ namespace CrowdVote.Controllers
 
             return View(model);
         }
+
+        public ActionResult UpVote(int id, int topicId)
+        {
+
+            Link link = _db.Links.Find(id);
+
+            link.VoteCount = link.VoteCount + 1;
+
+            _db.Entry(link).State = EntityState.Modified;
+            _db.SaveChanges();
+
+            return RedirectToAction("Details", "Topics", new { id = topicId });
+        }
+
+        public ActionResult DownVote(int id, int topicId)
+        {
+
+            Link link = _db.Links.Find(id);
+
+            link.VoteCount = link.VoteCount - 1;
+
+            _db.Entry(link).State = EntityState.Modified;
+            _db.SaveChanges();
+
+            return RedirectToAction("Details", "Topics", new { id = topicId });
+        }
+
     }
 }
