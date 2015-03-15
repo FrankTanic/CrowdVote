@@ -11,6 +11,9 @@
 @foreach (var link in Model.Links)
 {
 
-    <li><a href="@link.Url">@link.Title</a></li>
+    <li><a href="@link.Url">@if (@link.Title == null) { @link.Url } else { @link.Title }</a></li>
+    <label>@link.VoteCount</label>
+    <a href=@Url.Action("UpVote", "Links", new { id = @link.ID, topicId = @ViewBag.Topic })>Upvote</a>
+    <a href=@Url.Action("DownVote", "Links", new { id = @link.ID, topicId = @ViewBag.Topic })>Downvote</a>
 }
 
