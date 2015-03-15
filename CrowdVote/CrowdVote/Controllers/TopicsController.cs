@@ -61,6 +61,12 @@ namespace CrowdVote.Controllers
             ViewBag.Topic = id;
 
             Topic topic = _db.Topics.Find(id);
+            topic.Links.OrderByDescending(l => l.ID);
+
+            if (topic == null)
+            {
+                return HttpNotFound();
+            }
 
             return View(topic);           
         }
