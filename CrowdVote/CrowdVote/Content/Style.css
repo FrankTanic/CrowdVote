@@ -14,15 +14,20 @@ header {
     background-color: #1076b1;
 }
 
-div {
-    text-align: center;
-}
-
 h1 {
     margin: 0;
     padding: 25px 15px; 0;
     font-weight: 300;
     color: #fff;
+}
+
+h1 > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h2 {
+    color: #1076b1;
 }
 
 li {
@@ -42,14 +47,87 @@ a:hover {
 
 input[type="text"] {
     width: 100%;
+    height: 32px;
+    border: none;
+}
+
+label {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 button {
-    margin: 0 auto;
-    text-align: center;
+    min-width: 100px;
+    padding: 10px;
+    background-color: #1076b1;
+    color: #fff;
+    border: none;
 }
 
 .container {
-    width: 1200px;
-    margin: 0 auto;
+
+}
+
+.row {
+    margin: 10px 10px 10px 10px;
+}
+
+.stack {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.sub-menu {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.sub-menu > a {
+    margin-left: 25px;
+    color: #1076b1;
+}
+
+.submit {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.vote {
+    float: left;
+    width: 40px;
+    height: 80px;
+    margin-left: 25px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.upvote {
+    display: block;
+    width: 40px;
+    height: 30px;
+    background: url("img/upvote.png");
+}
+
+.upvote:hover {
+    background: url("img/upvote-hover.png");
+}
+
+.downvote {
+    display: block;
+    width: 40px;
+    height: 30px;
+    background: url("img/downvote.png");
+}
+
+.downvote:hover {
+    background: url("img/downvote-hover.png");
+}
+
+.link {
+    padding: 5px;
 }

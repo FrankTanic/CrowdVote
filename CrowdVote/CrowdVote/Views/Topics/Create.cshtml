@@ -6,10 +6,13 @@
 }
 
 
-<h2>What part of @ViewBag.Category would you like to know more about?</h2>
-<form method="post">
-    @Html.ValidationMessageFor(m => m.Title)
-    @Html.TextBoxFor(m => m.Title)
-    <button type="submit">Request a link</button>
-</form>
-
+<div class="row">
+    <h2>What part of @ViewBag.Category would you like to know more about?</h2>
+    <form method="post">
+        @Html.ValidationSummary()
+        @Html.TextBoxFor(m => m.Title)
+        <div class="submit">
+            <button type="submit">Request a link</button>
+        </div>
+    </form>
+</div>
