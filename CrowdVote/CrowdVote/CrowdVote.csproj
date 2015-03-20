@@ -102,6 +102,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\downvote-hover.png" />
+    <Content Include="Content\img\downvote.png" />
+    <Content Include="Content\img\upvote-hover.png" />
+    <Content Include="Content\img\upvote.png" />
     <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
