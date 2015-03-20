@@ -11,6 +11,7 @@ namespace CrowdVote.Models
         [Required(ErrorMessage = "You have to fill in a topic if you want people to find links for you")]
         public string Title { get; set; }
 
+        public virtual Category Category { get; set; }
         public virtual ICollection<Link> Links { get; set; }
     }
 }

@@ -26,7 +26,9 @@ namespace CrowdVote.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.Category = category.Title;
+            ViewBag.Category = category.ID;
+            ViewBag.CategoryTitle = category.Title;
+            ViewBag.SubLink = "Request a link";
 
             return View();
         }
@@ -61,12 +63,18 @@ namespace CrowdVote.Controllers
             ViewBag.Topic = id;
 
             Topic topic = _db.Topics.Find(id);
+      
             topic.Links.OrderByDescending(l => l.ID);
 
             if (topic == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.Category = topic.Category.ID;
+            ViewBag.CategoryTitle = topic.Category.Title;
+            ViewBag.Topic = topic.ID;
+            ViewBag.TopicTitle = topic.Title;
 
             return View(topic);           
         }

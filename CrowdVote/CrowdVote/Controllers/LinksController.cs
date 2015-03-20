@@ -29,6 +29,12 @@ namespace CrowdVote.Controllers
 
             ViewBag.Topic = topic.Title;
 
+            ViewBag.Category = topic.Category.ID;
+            ViewBag.CategoryTitle = topic.Category.Title;
+            ViewBag.Topic = topic.ID;
+            ViewBag.TopicTitle = topic.Title;
+            ViewBag.SubLink = "Post a new link";
+
             return View();
         }
 
