@@ -63,8 +63,6 @@ namespace CrowdVote.Controllers
             ViewBag.Topic = id;
 
             Topic topic = _db.Topics.Find(id);
-      
-            topic.Links.OrderByDescending(l => l.ID);
 
             if (topic == null)
             {
@@ -76,7 +74,7 @@ namespace CrowdVote.Controllers
             ViewBag.Topic = topic.ID;
             ViewBag.TopicTitle = topic.Title;
 
-            return View(topic);           
+            return View(topic.Links.OrderByDescending(x => x.VoteCount));           
         }
     }
 }

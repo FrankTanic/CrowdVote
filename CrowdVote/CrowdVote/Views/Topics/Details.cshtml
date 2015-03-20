@@ -8,7 +8,7 @@
     <a href=@Url.Action("Create", "Links", new { topicId = ViewBag.Topic })>Post a new link</a>
 </div>
 
-@foreach (var link in Model.Links)
+@foreach (var link in Model)
 {
     <div class="row">
         <div class="stack">
