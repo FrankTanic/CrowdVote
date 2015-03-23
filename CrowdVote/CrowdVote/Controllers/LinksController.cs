@@ -43,6 +43,12 @@ namespace CrowdVote.Controllers
         {
             Topic topic = _db.Topics.Find(topicId);
 
+            ViewBag.Category = topic.Category.ID;
+            ViewBag.CategoryTitle = topic.Category.Title;
+            ViewBag.Topic = topic.ID;
+            ViewBag.TopicTitle = topic.Title;
+            ViewBag.SubLink = "Post a new link";
+
            
             if (ModelState.IsValid)
             {

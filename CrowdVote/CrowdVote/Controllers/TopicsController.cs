@@ -36,9 +36,11 @@ namespace CrowdVote.Controllers
         [HttpPost]
         public ActionResult Create(int? categoryId, Topic model)
         {
-            Category category = _db.Category.Find(categoryId);
+            var category = _db.Category.Find(categoryId);
 
-            ViewBag.Category = category.Title;
+            ViewBag.Category = category.ID;
+            ViewBag.CategoryTitle = category.Title;
+            ViewBag.SubLink = "Request a link";
 
             if(ModelState.IsValid)
             {
@@ -60,9 +62,7 @@ namespace CrowdVote.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            ViewBag.Topic = id;
-
-            Topic topic = _db.Topics.Find(id);
+            var topic = _db.Topics.Find(id);
 
             if (topic == null)
             {

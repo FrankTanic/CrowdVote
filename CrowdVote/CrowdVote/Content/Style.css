@@ -67,12 +67,18 @@ button {
     border: none;
 }
 
-.container {
-
-}
-
 .row {
     margin: 10px 10px 10px 10px;
+}
+
+.validation-summary-errors > ul {
+    padding: 0;
+}
+
+.validation-summary-errors li {
+    width: 100%;
+    color: #871111;
+    font-weight: bold;
 }
 
 a.title {
@@ -82,6 +88,7 @@ a.title {
 .stack {
     float: left;
     width: 100%;
+    height: 120px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #dcdcdc;
@@ -106,10 +113,14 @@ a.title {
 .vote {
     float: left;
     width: 40px;
-    height: 80px;
     margin-left: 25px;
     margin-right: 10px;
     text-align: center;
+}
+
+.vote label {
+    padding-top: 10px;
+    padding-bottom: 12px;
 }
 
 .upvote {
@@ -135,5 +146,9 @@ a.title {
 }
 
 .link {
-    padding: 5px;
+    padding-top: 30px;
+    padding-left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
 }

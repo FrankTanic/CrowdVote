@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using CrowdVote.Models;
 
@@ -31,15 +29,14 @@ namespace CrowdVote.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            ViewBag.Category = id;
-
-            Category category = _db.Category.Find(id);
+            var category = _db.Category.Find(id);
 
             if(category == null)
             {
                 return HttpNotFound();
             }
 
+            ViewBag.Category = id;
             ViewBag.CategoryTitle = category.Title;
 
             return View(category);
